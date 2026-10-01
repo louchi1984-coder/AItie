@@ -1,0 +1,4 @@
+interface:
+  display_name: "AItie"
+  short_description: "从人物、风景或物品照片重组元素，选择画风创作贴纸，并将选定图案自动定尺寸排版打印"
+  default_prompt: "使用 $aitie，根据旅行照片重组主体、辅助和装饰元素，选择画风创作纪念贴纸；需要打印时自动设计尺寸并排版。"

@@ -1,0 +1,42 @@
+{
+  "generated_with": "native imagegen",
+  "source": "C:/Users/jz/Documents/Codex/2026-09-30/co/outputs/notre-dame-style-sweep/source.png",
+  "skill_snapshot": "SKILL.snapshot.md",
+  "framework_snapshot": "prompt-framework.snapshot.md",
+  "prompt_method": "公共框架原文填变量，各版只改变画风名",
+  "status": "探索样例，未经用户选定或打印清稿",
+  "items": [
+    {
+      "id": "vintage",
+      "style": "复古旅行海报",
+      "image": "vintage.png",
+      "prompt": "vintage.prompt.txt",
+      "original": "C:\\Users\\jz\\.codex\\generated_images\\01a0f3ec-416d-7d11-9e8b-29c1439ad8cd\\exec-5d458833-a994-4bc4-a1b7-e29bc51e6df0.png",
+      "assessment": "文字正确，主体对应；复古海报色彩与字形明确，建筑细节偏写实；游客群比预期密集。外围需后续清稿检查。"
+    },
+    {
+      "id": "watercolor",
+      "style": "水彩旅行写生",
+      "image": "watercolor.png",
+      "prompt": "watercolor.prompt.txt",
+      "original": "C:\\Users\\jz\\.codex\\generated_images\\01a0f3ec-416d-7d11-9e8b-29c1439ad8cd\\exec-13ce4ce1-1f05-464c-968a-8cd296a85f46.png",
+      "assessment": "水彩晕染和纸纹可见，文字正确；构图与复古版相近，主体建筑依然细密写实，游客密集。"
+    },
+    {
+      "id": "ink",
+      "style": "钢笔速写",
+      "image": "ink.png",
+      "prompt": "ink.prompt.txt",
+      "original": "C:\\Users\\jz\\.codex\\generated_images\\01a0f3ec-416d-7d11-9e8b-29c1439ad8cd\\exec-741a929f-67d1-476a-ad91-cbbe54b15a37.png",
+      "assessment": "钢笔轮廓和排线明确，带淡彩；文字正确。与前两版构图接近，游客仍较密。"
+    },
+    {
+      "id": "flat",
+      "style": "扁平设计",
+      "image": "flat.png",
+      "prompt": "flat.prompt.txt",
+      "original": "C:\\Users\\jz\\.codex\\generated_images\\01a0f3ec-416d-7d11-9e8b-29c1439ad8cd\\exec-70dfca9c-6c51-4bba-9f64-ae9659bfa656.png",
+      "assessment": "文字正确，树木人物和天空有平面概括；建筑仍有较强细节/光影，扁平程度有限，构图与本组相近。"
+    }
+  ]
+}
