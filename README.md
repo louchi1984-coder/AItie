@@ -4,6 +4,7 @@
 
 - 技能入口：`SKILL.md`
 - 跨平台使用：`references/platforms.md`
+- 非 Codex 画风要求：`references/non-codex-styles.md`（22 种名称转为具体视觉要求）
 - 画风图鉴：`assets/style-selector/index.html`（在浏览器打开，保留整个 assets 目录）
 - 打印说明：`references/production.md`
 - 打印脚本：`scripts/layout_stickers.py`

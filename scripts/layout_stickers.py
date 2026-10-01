@@ -46,7 +46,7 @@ def prepare(config, base):
             image = ImageOps.exif_transpose(source)
             image.load()
             pxw, pxh = image.size
-            if 'A' in image.getbands() and image.getchannel('A').getbbox() is None:
+            if image.convert('RGBA').getchannel('A').getbbox() is None:
                 raise ValueError(f'{ident}: artwork is fully transparent')
         density = item.get('density', 'normal')
         if density not in DENSITY:
