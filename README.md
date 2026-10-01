@@ -2,6 +2,10 @@
 
 将旅行照片重组为纪念贴纸，支持画风探索和选定图案的实际尺寸 PDF 排版。
 
+组图默认制作统一画风的一套系列。画风可以选预设、自行描述或从上传的参考图提取；不支持生图的 agent 直接按枚提供完整 prompt。也支持独立提取参考图风格。
+
+- 组图流程：`references/series.md`
+- 风格提取：`references/style-extraction.md`
 - 技能入口：`SKILL.md`
 - 跨平台使用：`references/platforms.md`
 - 非 Codex 画风要求：`references/non-codex-styles.md`（22 种名称转为具体视觉要求）

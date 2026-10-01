@@ -1,6 +1,6 @@
 ---
 name: aitie
-description: Create travel souvenir stickers from people, scenery, objects or mixed photos, with element recomposition, selectable style presets and examples; arrange selected designs at automatic physical sizes into printable PDF sheets. Use for 旅行贴纸、照片转贴纸、旅行箱贴纸、贴纸排版打印. Not for 3D or button badges.
+description: Create travel souvenir stickers from people, scenery, objects or mixed photos, with element recomposition, unified photo series, selectable style presets, custom style descriptions and reference-image style extraction; arrange selected designs at automatic physical sizes into printable PDF sheets. Use for 旅行贴纸、照片转贴纸、旅行箱贴纸、贴纸排版打印. Not for 3D or button badges.
 ---
 
 # 旅行照片 → 纪念贴纸 → 打印排版
@@ -13,6 +13,8 @@ description: Create travel souvenir stickers from people, scenery, objects or mi
 
 ## 1. 看照片，决定元素角色
 
+用户提供一组照片时，默认制作一套统一画风的系列，读取 [组图与系列](references/series.md)，先看整组并一次确定整套方向，不逐张重复询问。用户指定的画风参考图不计入内容照片。
+
 读取 [元素与变量](references/subjects.md)，实际查看照片，结合用户想纪念什么识别可用元素。用户尚未明确元素使用逻辑时，先根据原图提出几个成立的设计方案，通常 2–3 个，推荐其中一个，并等用户选择后再生成。每个方案简短说明主角、保留项、图文装饰项与舍弃项。方案必须来自照片中实际有意义的内容，不机械套用人物、风景、物品菜单，不强行凑数量或创造没有依据的主角。照片没有明显人物主角时，不提出人物主导方案。
 
 用户已经明确元素安排（例如“只要建筑”）、已选方案或要求自行决定时，直接执行，不重复让选。人物、风景、物品是内部理解逻辑，不是每张照片必须向用户展示的选项。元素方案与画风、展示文字、补充特色元素独立。
@@ -23,13 +25,15 @@ description: Create travel souvenir stickers from people, scenery, objects or mi
 
 使用 [公共框架](references/prompt-framework.md)。可调变量包括元素角色、场景保留范围、特色元素、展示文字、补充信息、装饰丰富度、外形和系列关系。展示文字控制实际文案；补充信息仅用于理解主题和选择元素，不自动转成印字，包括翻译后的地名也不能自动加入。未指定的设计选择由 skill 处理，不用把参数表全交给用户填写。外形和长宽比例由构图决定。
 
-查看 [画风样例](references/styles.md)。画风未定时，简短询问“要不要看画风样例？也可以直接告诉我想要的画风。”可与元素方案在同一轮询问。用户需要时打开 HTML 图鉴；已要求看样例则直接打开。图鉴只展示画风名称与图片，点击看大图，不设置填写、勾选、复制或提交表单。用户在对话里说想要的画风，也可以自定义，不受图鉴限制。已有画风直接使用，不重复询问。
+查看 [画风样例](references/styles.md)。画风未定时，简短询问“要不要看画风样例？也可以自己描述画风，或上传一张参考图让我提取风格。”可与元素方案在同一轮询问。用户需要时打开 HTML 图鉴；已要求看样例则直接打开。图鉴只展示画风名称与图片，点击看大图，不设置填写、勾选、复制或提交表单。用户在对话里说想要的画风，也可以自定义，不受图鉴限制。已有画风直接使用，不重复询问。
 
-按当前 agent 的平台选择画风通道：Codex 通道只把选中的简短画风名称与用户补充放入画风变量；非 Codex 通道读取 [具体画风要求](references/non-codex-styles.md)，把所选名称转成对应的具体视觉要求，直接生图与仅交付 prompt 都适用。环境不明时使用非 Codex 通道。人物、风景、物品适用于每一种画风。样例是画风参考，用户指定收录的其他对话作品可以使用，并如实记录来源；不冒充当前 skill 的生成验证。早期已否定的旧图不混入。样图不自动传给生成工具，样例文字与构图不自动套用。
+用户自写画风时保留其具体要求；上传图片要求提取画风时读取 [风格提取](references/style-extraction.md)，实际看图并交付风格摘要和可复用的风格 prompt，也支持只做风格提取。描述和提取结果在所有通道都用具体要求，不强制变成预设名称。
+
+对已选的预设名称，按当前 agent 的平台选择画风通道：Codex 通道只把选中的简短画风名称与用户补充放入画风变量；非 Codex 通道读取 [具体画风要求](references/non-codex-styles.md)，把所选名称转成对应的具体视觉要求，直接生图与仅交付 prompt 都适用。环境不明时使用非 Codex 通道。人物、风景、物品适用于每一种画风。样例是画风参考，用户指定收录的其他对话作品可以使用，并如实记录来源；不冒充当前 skill 的生成验证。早期已否定的旧图不混入。样图不自动传给生成工具，样例文字与构图不自动套用。
 
 预设画风应有明确且可辨认的视觉概念，以实际样例支持；不为凑数量将宽泛技法或材质名称当成独立画风。画风也参与视角、元素取舍与图文构图，在用户的记忆重点和必留内容内自由设计，不把所有画风锁成同一布局。
 
-以“不同画家画同一主体”为创作目标。细节可以丰富，也可以概括；不要把人物保真变成照片描摹，也不要把贴纸化变成统一删细节。不要把整份 skill、所有画风或历次失败禁令一起塞入生图提示词。
+多画风比较以“不同画家画同一主体”为创作目标；组图系列则以统一画风表现不同主体。细节可以丰富，也可以概括；不要把人物保真变成照片描摹，也不要把贴纸化变成统一删细节。不要把整份 skill、所有画风或历次失败禁令一起塞入生图提示词。
 
 ## 3. 生成与选择
 
